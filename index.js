@@ -19,8 +19,7 @@ async function sendTimeMessage() {
     process.env.time_text_channel_id,
   );
 
-  const response = await textChannel.bulkDelete(100)
-  console.log('response: ', response)
+  await textChannel.bulkDelete(100);
 
   if (textChannel) {
     const currentTime = new Date();
@@ -71,6 +70,7 @@ app.listen( 3000, () => {
 // test 2
 import axios from 'axios';
 app.get('/health', async (req, res) => {
+  console.log('refreshing server...')
   return res.send({ message: 'check' });
 });
 
