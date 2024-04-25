@@ -19,7 +19,7 @@ async function sendTimeMessage() {
     process.env.time_text_channel_id,
   );
 
-  const response = await textChannel.bulkDelete()
+  const response = await textChannel.bulkDelete(100)
   console.log('response: ', response)
 
   if (textChannel) {
