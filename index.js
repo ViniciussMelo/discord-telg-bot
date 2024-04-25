@@ -55,5 +55,12 @@ function convertTime(utcTime) {
   return `${formattedHours}:${formattedMinutes} ${ampm}`;
 }
 
-console.log("token: ', process.env.token);
 client.login(process.env.token);
+
+import express from 'express';
+const app = express();
+
+// test
+app.listen( 3000, () => {
+  console.log(`Express server listening on port ${process.env.PORT || 3000}`);
+});
