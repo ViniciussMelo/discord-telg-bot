@@ -87,4 +87,4 @@ app.get('/health', async (req, res) => {
 
   // every 10 minutes
   setInterval(makeRequest, 600000);
-}, ());
+})();
