@@ -71,4 +71,9 @@ app.get('/health', async (req, res) => {
   return res.send({ message: 'check' });
 });
 
-axios.get(process.env.API_URL).then(() => console.log('request ok')).catch(err => console.log('error: ', err.message));
+const makeRequest = () => {
+  axios.get(process.env.API_URL).then(() => console.log('request ok')).catch(err => console.log('error: ', err.message))
+}
+
+// every 10 minutes
+setInterval(makeRequest, 600000);
