@@ -57,10 +57,18 @@ function convertTime(utcTime) {
 
 client.login(process.env.token);
 
+// test
 import express from 'express';
 const app = express();
 
-// test
 app.listen( 3000, () => {
   console.log(`Express server listening on port ${process.env.PORT || 3000}`);
 });
+
+// test 2
+import axios from 'axios';
+app.get('/health', async (req, res) => {
+  return res.send({ message: 'check' });
+});
+
+axios.get(process.env.API_URL).then(() => console.log('request ok')).catch(err => console.log('error: ', err.message));
