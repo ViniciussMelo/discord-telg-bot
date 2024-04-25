@@ -77,7 +77,7 @@ app.get('/health', async (req, res) => {
 (async () => {
   const makeRequest = async () => {
     try {
-      await axios.get(process.env.API_URL)
+      await axios.get(`${process.env.API_URL}/health`)
       console.log('request ok');
     } catch (err) {
       console.log('error while sending request!');
