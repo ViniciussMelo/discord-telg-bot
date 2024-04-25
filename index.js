@@ -55,4 +55,5 @@ function convertTime(utcTime) {
   return `${formattedHours}:${formattedMinutes} ${ampm}`;
 }
 
-client.login(process.env.token)
+console.log("token: ', process.env.token);
+client.login(process.env.token);
