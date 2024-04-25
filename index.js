@@ -20,6 +20,7 @@ async function sendTimeMessage() {
   );
 
   const response = await textChannel.bulkDelete()
+  console.log('response: ', response)
 
   if (textChannel) {
     const currentTime = new Date();
