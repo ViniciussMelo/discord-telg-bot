@@ -14,10 +14,12 @@ client.once('ready', () => {
   setInterval(sendTimeMessage, oneMinute);
 })
 
-function sendTimeMessage() {
+async function sendTimeMessage() {
   const textChannel = client.channels.cache.get(
     process.env.time_text_channel_id,
   );
+
+  const response = await textChannel.bulkDelete()
 
   if (textChannel) {
     const currentTime = new Date();
